@@ -16,9 +16,3 @@ How to use:
   ./example/x86_64-linux-gnu-release/server
   ./example/x86_64-linux-gnu-release/client
   You will see json message exchanged between client and server.
-
-Notes:
-* The socket path name is unique between server instances.
-  Thus you will need to remove the socket name if you run the
-  server example a second time.
-  rm /tmp/socket.test
