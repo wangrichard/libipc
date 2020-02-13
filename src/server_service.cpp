@@ -109,7 +109,8 @@ int server_service::start(void)
     memset(&un, 0, sizeof(un));
     un.sun_family = AF_UNIX;
     strncpy(un.sun_path, m_path.c_str(), sizeof(un.sun_path) - 1);
-
+	unlink(m_path.c_str());
+	
     if (bind(listen_fd, (struct sockaddr *) &un, sizeof(un)) < 0) {
         perror("bind error");
         return -1;
