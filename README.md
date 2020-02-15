@@ -31,4 +31,3 @@ operation: get
 param: 0  
 param2: 1  
 param3: bang  
-
