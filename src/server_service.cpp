@@ -19,12 +19,12 @@ namespace ipc
 void server_proc(server_service *s)
 {
 	int fd=0, n;
-  const char *jp;
+  	const char *jp;
 	char buf[BUF_SIZE];
 
 	if (s == nullptr)
 	{
-		printf("Input parameter null.\n");
+		std::cout << "Input parameter null." << std::endl;
 		return;
 	}
 
@@ -35,7 +35,8 @@ void server_proc(server_service *s)
             perror("accpet error");
             continue;
         }
-
+		
+		memset(buf, 0, sizeof(buf));
         if ((n = read(fd, buf, sizeof(buf))) > 0) 
         {
             //printf("%s\n", buf);
@@ -116,7 +117,7 @@ int server_service::start(void)
         return -1;
     }
 
-    printf("UNIX Domain Socket bound\n");
+    std::cout << "UNIX Domain Socket bound." << std::endl;
 
     if (listen(listen_fd, QLEN) < 0) {
         perror("listen error");

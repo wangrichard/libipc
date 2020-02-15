@@ -8,31 +8,31 @@ void server_cb(json_object *json)
 	
 	if (json == nullptr)
 	{
-		printf("Input parameter null\n");
+		std::cout << "Input parameter null." << std::endl;
 		return;	
 	}
 	
-	printf("server cb\n");
+	std::cout << "server cb." << std::endl;
 	
 	if (nullptr != (jstatus=json_object_object_get(json, "status")))
 	{
-		printf("status: %d\n", json_object_get_int(jstatus));
+		std::cout << "status: " << json_object_get_int(jstatus) << std::endl;
 	}
 	if (nullptr != (jstatus=json_object_object_get(json, "operation")))
 	{
-		printf("operation: %s\n", json_object_get_string(jstatus));
+		std::cout << "operation: " << json_object_get_string(jstatus) << std::endl;
 	}
 	if (nullptr != (jstatus=json_object_object_get(json, "param")))
 	{
-		printf("param: %d\n", json_object_get_boolean(jstatus));
+		std::cout << "param: "<< json_object_get_boolean(jstatus) << std::endl;
 	}
 	if (nullptr != (jstatus=json_object_object_get(json, "param2")))
 	{
-		printf("param2: %d\n", json_object_get_boolean(jstatus));
+		std::cout << "param2: " << json_object_get_boolean(jstatus) << std::endl;
 	}
 	if (nullptr != (jstatus=json_object_object_get(json, "param3")))
 	{
-		printf("param3: %s\n", json_object_get_string(jstatus));
+		std::cout << "param3: " << json_object_get_string(jstatus) << std::endl;
 	}
 }
 

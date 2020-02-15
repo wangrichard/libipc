@@ -37,7 +37,7 @@ int client_service::client_send(const char * to_path, json_object *json)
 
 	if ((to_path==nullptr) || (json==nullptr))
 	{
-		printf("Input parameter null.\n");
+	 	std::cout << "Input parameter null." << std::endl;
 		return -1;
 	}
 
