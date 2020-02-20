@@ -16,19 +16,19 @@ namespace ipc
 class server_service
 {
 public:
-	server_service() = delete;
-	server_service(const std::string & path, void (*server_cb)(json_object *json));
-	~server_service();
-	int start(void);
-	void (*server_cb)(json_object *json);
-	
-	bool m_shutdown = false;
-	int listen_fd;
-	json_object *m_json = nullptr;
+    server_service() = delete;
+    server_service(const std::string & path, void (*server_cb)(json_object *json));
+    ~server_service();
+    int start(void);
+    void (*server_cb)(json_object *json);
+
+    bool m_shutdown = false;
+    int listen_fd;
+    json_object *m_json = nullptr;
 
 private:
-	std::string m_path;
-	std::thread m_thread;
+    std::string m_path;
+    std::thread m_thread;
 };
 
 }
